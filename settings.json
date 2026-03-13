@@ -1,0 +1,64 @@
+{
+    "claudeCode.preferredLocation": "panel",
+    "claudeCode.useTerminal": true,
+
+    // VSCode Vim configuration
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // <leader>e — open and focus Explorer sidebar (directory tree)
+        {
+            "before": ["<leader>", "e"],
+            "commands": ["workbench.view.explorer"]
+        },
+        // Shift+L — next editor tab
+        {
+            "before": ["L"],
+            "commands": ["workbench.action.nextEditor"]
+        },
+        // Shift+H — previous editor tab
+        {
+            "before": ["H"],
+            "commands": ["workbench.action.previousEditor"]
+        },
+        // <leader>t — focus terminal (opens and focuses, reuses existing)
+        {
+            "before": ["<leader>", "t"],
+            "commands": ["workbench.action.terminal.focus"]
+        },
+        // <leader>r — open Run & Debug panel (reuses existing)
+        {
+            "before": ["<leader>", "r"],
+            "commands": ["workbench.view.debug"]
+        },
+        // <leader>q — close current editor
+        {
+            "before": ["<leader>", "q"],
+            "commands": ["workbench.action.closeActiveEditor"]
+        },
+        // <leader>qa — close all editors in current split
+        {
+            "before": ["<leader>", "q", "a"],
+            "commands": ["workbench.action.closeEditorsInGroup"]
+        },
+        // <leader>s — horizontal split
+        {
+            "before": ["<leader>", "s"],
+            "commands": ["workbench.action.splitEditorDown"]
+        },
+        // <leader>v — vertical split
+        {
+            "before": ["<leader>", "v"],
+            "commands": ["workbench.action.splitEditor"]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["L"],
+            "commands": ["workbench.action.nextEditor"]
+        },
+        {
+            "before": ["R"],
+            "commands": ["workbench.action.previousEditor"]
+        }
+    ]
+}

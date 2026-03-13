@@ -1,0 +1,128 @@
+[
+    {
+        "key": "shift+enter",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u001b\r"
+        },
+        "when": "terminalFocus"
+    },
+
+    // --- Explorer (directory tree) vim-style navigation ---
+    {
+        "key": "j",
+        "command": "list.focusDown",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "k",
+        "command": "list.focusUp",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "l",
+        "command": "list.select",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "h",
+        "command": "list.collapse",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+
+    // --- Escape: close Explorer and return to editor ---
+    {
+        "key": "escape",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.closeSidebar",
+                "workbench.action.focusActiveEditorGroup"
+            ]
+        },
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+
+    // --- Terminal: switch between terminals ---
+    {
+        "key": "shift+l",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "shift+h",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "cmd+shift+l",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus && isMac"
+    },
+    {
+        "key": "cmd+shift+h",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && isMac"
+    },
+    {
+        "key": "alt+shift+l",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus && isWindows"
+    },
+    {
+        "key": "alt+shift+r",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && isWindows"
+    },
+
+    // --- Escape: close search/debug and return to editor ---
+    {
+        "key": "escape",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.closeSidebar",
+                "workbench.action.focusActiveEditorGroup"
+            ]
+        },
+        "when": "sideBarFocus && !filesExplorerFocus && !inputFocus"
+    },
+
+    // --- Run & Debug panel shortcuts ---
+    {
+        "key": "r",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.debug.run",
+                "workbench.action.closeSidebar",
+                "workbench.action.terminal.focus"
+            ]
+        },
+        "when": "sideBarFocus && !inputFocus"
+    },
+    {
+        "key": "d",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.debug.start",
+                "workbench.action.terminal.focus"
+            ]
+        },
+        "when": "sideBarFocus && !inputFocus"
+    },
+
+    // --- Escape: close terminal/panel and return to editor ---
+    {
+        "key": "escape",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.closePanel",
+                "workbench.action.focusActiveEditorGroup"
+            ]
+        },
+        "when": "terminalFocus || panelFocus"
+    }
+]
