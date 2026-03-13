@@ -2,6 +2,9 @@
     "claudeCode.preferredLocation": "panel",
     "claudeCode.useTerminal": true,
 
+    // Use system clipboard for yank/paste
+    "vim.useSystemClipboard": true,
+
     // VSCode Vim configuration
     "vim.leader": "<space>",
     "vim.normalModeKeyBindingsNonRecursive": [
