@@ -189,7 +189,7 @@
         },
         "when": "searchViewletFocus"
     },
-    // --- commit + push
+    // --- commit + push using panel
     {
         "key": "cmd+enter",
         "command": "runCommands",
