@@ -52,7 +52,17 @@
         {
             "before": ["<leader>", "v"],
             "commands": ["workbench.action.splitEditor"]
-        }
+        },
+        // <leader>c — open Source Control (commit) panel
+        {
+            "before": ["<leader>", "c"],
+            "commands": ["workbench.view.scm"]
+        },
+        // <leader>f — search file (quick open)
+        {
+            "before": ["<leader>", "f"],
+            "commands": ["workbench.action.quickOpen"]
+        },
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
@@ -60,8 +70,10 @@
             "commands": ["workbench.action.nextEditor"]
         },
         {
-            "before": ["R"],
+            "before": ["H"],
             "commands": ["workbench.action.previousEditor"]
         }
-    ]
+    ],
+    "git.blame.editorDecoration.enabled": true,
+    "git.allowNoVerifyCommit": true
 }
