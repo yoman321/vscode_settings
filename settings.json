@@ -73,5 +73,6 @@
             "before": ["H"],
             "commands": ["workbench.action.previousEditor"]
         }
-    ]
+    ],
+    "git.postCommitCommand": "push"
 }

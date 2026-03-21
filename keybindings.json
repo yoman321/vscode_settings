@@ -189,16 +189,10 @@
         },
         "when": "searchViewletFocus"
     },
-    // --- commit + push using panel
+    // --- commit (auto-pushes via git.postCommitCommand setting)
     {
         "key": "cmd+enter",
-        "command": "runCommands",
-        "args": {
-            "commands": [
-                "git.commit",
-                "git.push"
-            ]
-        },
+        "command": "git.commit",
         "when": "scmInputIsFocused || scmInputBoxFocus"
     }
 ]
