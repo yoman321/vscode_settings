@@ -192,7 +192,13 @@
     // --- commit + push
     {
         "key": "cmd+enter",
-        "command": "git.commitAndPush",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "git.commit",
+                "git.push"
+            ]
+        },
         "when": "scmInputIsFocused || scmInputBoxFocus"
     }
 ]
