@@ -188,11 +188,5 @@
             ]
         },
         "when": "searchViewletFocus"
-    },
-    // --- commit (auto-pushes via git.postCommitCommand setting)
-    {
-        "key": "cmd+enter",
-        "command": "git.commit",
-        "when": "scmInputIsFocused || scmInputBoxFocus"
     }
 ]
