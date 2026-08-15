@@ -42,16 +42,6 @@
     },
     // --- Terminal: switch between terminals ---
     {
-        "key": "shift+l",
-        "command": "workbench.action.terminal.focusNext",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "shift+h",
-        "command": "workbench.action.terminal.focusPrevious",
-        "when": "terminalFocus"
-    },
-    {
         "key": "cmd+shift+l",
         "command": "workbench.action.terminal.focusNext",
         "when": "terminalFocus && isMac"
@@ -90,6 +80,27 @@
         "key": "shift+alt+d",
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus && isWindows"
+    },
+    // --- Editor: switch between tabs (moved off bare vim L/H) ---
+    {
+        "key": "cmd+shift+l",
+        "command": "workbench.action.nextEditor",
+        "when": "editorTextFocus && isMac"
+    },
+    {
+        "key": "cmd+shift+h",
+        "command": "workbench.action.previousEditor",
+        "when": "editorTextFocus && isMac"
+    },
+    {
+        "key": "alt+shift+l",
+        "command": "workbench.action.nextEditor",
+        "when": "editorTextFocus && isWindows"
+    },
+    {
+        "key": "alt+shift+h",
+        "command": "workbench.action.previousEditor",
+        "when": "editorTextFocus && isWindows"
     },
     // --- Escape: close source control (commit) panel and return to editor ---
     {
@@ -166,6 +177,7 @@
     },
 
     // --- Escape: close terminal/panel and return to editor ---
+    // Non-terminal panels (problems, output, debug console) keep bare escape.
     {
         "key": "escape",
         "command": "runCommands",
@@ -175,7 +187,20 @@
                 "workbench.action.focusActiveEditorGroup"
             ]
         },
-        "when": "terminalFocus || panelFocus"
+        "when": "panelFocus && !terminalFocus"
+    },
+    // Terminal needs a modifier so bare escape reaches vim/TUIs in the shell.
+    // cmd+escape is left to the Claude Code extension on purpose.
+    {
+        "key": "ctrl+escape",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.closePanel",
+                "workbench.action.focusActiveEditorGroup"
+            ]
+        },
+        "when": "terminalFocus"
     },
     // --- Escape: close search panel and return to editor ---
     {

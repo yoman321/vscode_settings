@@ -13,16 +13,8 @@
             "before": ["<leader>", "e"],
             "commands": ["workbench.view.explorer"]
         },
-        // Shift+L — next editor tab
-        {
-            "before": ["L"],
-            "commands": ["workbench.action.nextEditor"]
-        },
-        // Shift+H — previous editor tab
-        {
-            "before": ["H"],
-            "commands": ["workbench.action.previousEditor"]
-        },
+        // Tab switching lives in keybindings.json as cmd+shift+h/l (mac)
+        // and alt+shift+h/l (windows), so bare H/L stay vim's screen motions.
         // <leader>t — focus terminal (opens and focuses, reuses existing)
         {
             "before": ["<leader>", "t"],
@@ -64,14 +56,7 @@
             "commands": ["workbench.action.quickOpen"]
         },
     ],
-    "vim.visualModeKeyBindingsNonRecursive": [
-        {
-            "before": ["L"],
-            "commands": ["workbench.action.nextEditor"]
-        },
-        {
-            "before": ["H"],
-            "commands": ["workbench.action.previousEditor"]
-        }
-    ]
+    "python.createEnvironment.trigger": "off",
+    "editor.lineNumbers": "relative",
+    "terminal.integrated.initialHint": false
 }
